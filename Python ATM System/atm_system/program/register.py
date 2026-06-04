@@ -19,7 +19,7 @@ class Register:
         """
         Initializes this object's attributes.
         """
-        self.file_name = "account_balance.txt"
+        self.file_name = "account_balances.txt"
         # For efficiency, file read/write operations are minimized
         # by loading the whole csv to a list during this object's
         # construction so that we only need to interact with list
@@ -63,11 +63,11 @@ class Register:
 
         account = AccountBalance(phone_num, acc_num, hash, salt)
 
-        self.accounts.append(account.__dict__)
+        self.accounts.append(account.to_dict())
 
         # System should work fine without the following line.
         # This is for 'just in case'.
-        write_to_csv("account_balance.txt", account)
+        write_to_csv(self.file_name, account)
 
         print("\nRegistration Successful.")
         print(f"Your account number is: {account.account_number}")
@@ -114,6 +114,6 @@ class Register:
         Returns true if given phone_number is found, false otheriwise.
         """
         for row in self.accounts:
-            if (phone_number in row):
+            if (phone_number == row["phone_number"]):
                 return True
         return False

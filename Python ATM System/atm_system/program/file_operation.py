@@ -9,7 +9,7 @@ def write_to_csv(file_name, object):
     """
     Writes the state of a given object to a csv file.
     """
-    headers = object.__dict__.keys()
+    headers = object.to_dict().keys()
     file_exists = check_file_exists(file_name)
 
     open_mode = "w"
@@ -20,7 +20,7 @@ def write_to_csv(file_name, object):
         writer = csv.DictWriter(file, fieldnames=headers)
         if (not file_exists):
             writer.writeheader()
-        writer.writerow(object.__dict__)
+        writer.writerow(object.to_dict())
 
 
 def check_file_exists(file_name):
