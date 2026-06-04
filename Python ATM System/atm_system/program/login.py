@@ -15,12 +15,13 @@ class Login:
     def __init__(self):
         """
         """
-        self.file_name = "account_balance.txt"
+        self.file_name = "account_balances.txt"
         # For efficiency, file read/write operations are minimized
         # by loading the whole csv to a list during this object's
         # construction so that we only need to interact with list
         # and only update the file when necessary.
         self.accounts = load_from_file(self.file_name)
+        self.active_account = None
 
     def account_login(self):
         """
@@ -28,20 +29,19 @@ class Login:
         """
         for i in range(3, 0, -1):
             phone_number = input("Phone number: ")
-            row_dict = self.get_row(phone_number)
+            self.active_account = self.get_row(phone_number)
 
-            if not row_dict:
+            if not self.active_account:
                 print(f"\nAccount not found. {i-1} attempts remaining\n")
                 continue
 
             pin = input("PIN: ")
 
-            hash = pin_hasher(row_dict["salt"], pin)
+            hash = pin_hasher(self.active_account["salt"], pin)
 
-            if (hash == row_dict["pin_number"]):
+            if (hash == self.active_account["pin_number"]):
                 print("\nLogin successful. Welcome back.\n")
-                print("\n--- Main Menu ---")
-                transaction = Transaction()
+                transaction = Transaction(self.accounts, self.active_account)
                 transaction.transact()
                 return
 

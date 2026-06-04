@@ -1,2 +1,0 @@
- phone_number,account_number,salt,pin_number,current_balance
-1111111111,17109440,qiXuNxyE,5c16031d97542e65b69cf0ee6a6fc28fb106ce4fbe0a606eec3a16ea1e2f870b,0.0

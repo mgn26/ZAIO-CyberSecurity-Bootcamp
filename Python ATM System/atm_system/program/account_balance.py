@@ -11,12 +11,16 @@ class AccountBalance(Account):
     Inherits from Account.
 
     Attributes:
-        current_balance (float): User's account balance
+        pin_number (str): stores hashed pin number
+        salt (str): stores generated salt string
+        balance (float): User's account balance
     """
 
-    def __init__(self, phone_num, acc_num, pin, salt, current_balance=0.0):
+    def __init__(self, phone_num, acc_num, pin, salt, current_balance=0.00):
         """
         Inititalizes parent objects and local attributes.
         """
-        super().__init__(phone_num, acc_num, pin, salt)
-        self.current_balance = current_balance
+        super().__init__(phone_num, acc_num)
+        self.salt = salt
+        self.pin_number = pin
+        self.balance = current_balance
