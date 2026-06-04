@@ -13,10 +13,12 @@ def acc_num_gen(str_length=8):
     result = "".join(digits)
     return result
 
+
 def rand_str_gen(str_length=8):
     """
     This function simply generates a random string.
     """
-    random_string = random.choices(string.ascii_letters + string.digits, k=str_length)
+    random_string = \
+        random.choices(string.ascii_letters + string.digits, k=str_length)
     result = "".join(random_string)
     return result
