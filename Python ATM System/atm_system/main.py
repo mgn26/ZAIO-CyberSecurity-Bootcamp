@@ -12,7 +12,7 @@ main_display = "\n============================\n" \
 
 option = 0
 
-while option != 3:
+while True:
     print(main_display)
     option = int(input("Select an option: "))
     if (option == 1):
@@ -22,8 +22,9 @@ while option != 3:
     elif (option == 2):
         print("\n--- Login ---")
         login = Login()
-
-    elif (option > 3 or option < 1):
+        login.account_login()
+    elif (option == 3):
+        print("\nExiting Program. Good Bye!")
+        break
+    else:
         print("\nPlease choose a valid option.")
-
-print("\nExiting Program. Good Bye!")
