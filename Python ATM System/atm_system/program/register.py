@@ -1,7 +1,9 @@
 """
 This module implement the register class used in PyBank ATM.
 """
+
 from .account_balance import AccountBalance
+from .log import Log
 from .str_gen import acc_num_gen, rand_str_gen
 from .pin_hasher import pin_hasher
 from .file_operation import *  # file_operation just contains a few functions
@@ -12,9 +14,11 @@ class Register:
     This class handles all operations associated with account creation.
 
     Attributes:
-        file_name (str):
-        accounts (list):
+        file_name (str): Account_balances file name.
+        accounts (list): list of dictionaries that represent
+            account_balances rows.
     """
+
     def __init__(self):
         """
         Initializes this object's attributes.
@@ -25,6 +29,7 @@ class Register:
         # construction so that we only need to interact with list
         # and only update the file when necessary.
         self.accounts = load_from_file(self.file_name)
+        self.sys_log = Log()
 
     def __del__(self):
         """
@@ -39,13 +44,19 @@ class Register:
         Handles all registration operations.
         """
         phone_num = self.get_phone_num()
-        if (phone_num == 0):
+        if phone_num == 0:
             print("\nRegistration failed.")
+            self.sys_log.to_log(
+                phone_num, self.sys_log.event_types.REGISTRATION_FAILED.name
+            )
             return
 
         pin = self.get_pin()
-        if (pin == 0):
+        if pin == 0:
             print("\nRegistration failed.")
+            self.sys_log.to_log(
+                phone_num, self.sys_log.event_types.REGISTRATION_FAILED.name
+            )
             return
 
         salt = rand_str_gen()
@@ -55,7 +66,7 @@ class Register:
         acc_num = acc_num_gen()
         while True:
             for row in self.accounts:
-                if (acc_num in row):
+                if acc_num in row:
                     break
             else:
                 break
@@ -70,6 +81,9 @@ class Register:
         write_to_csv(self.file_name, account)
 
         print("\nRegistration Successful.")
+        self.sys_log.to_log(
+            phone_num, self.sys_log.event_types.REGISTRATION_SUCCESSFUL.name
+        )
         print(f"Your account number is: {account.account_number}")
         print("Please save this number."
               "You will need it to receive transfers.")
@@ -80,13 +94,13 @@ class Register:
         """
         phone_number = input("Enter your phone number (10 digits): ")
 
-        if (len(phone_number) != 10):
+        if len(phone_number) != 10:
             print("\nPhone number must be exactly 10 digits long.")
             return 0
-        elif (not phone_number.isdigit()):
+        elif not phone_number.isdigit():
             print("\nPhone number must contain only digits.")
             return 0
-        elif (self.search_phone_number(phone_number)):
+        elif self.search_phone_number(phone_number):
             print("\nPhone number already exists.")
             return 0
         else:
@@ -99,11 +113,11 @@ class Register:
         pin_num = input("Create a PIN (4-5 digits): ")
         pin_num_confirm = input("Confirm PIN: ")
 
-        if (pin_num != pin_num_confirm):
+        if pin_num != pin_num_confirm:
             print("\nPlease make sure the PINs match.")
             return 0
 
-        if (len(pin_num) != 5 and len(pin_num) != 4):
+        if len(pin_num) != 5 and len(pin_num) != 4:
             print("\nPIN must either be 4 or 5 digits long")
             return 0
 
@@ -114,6 +128,6 @@ class Register:
         Returns true if given phone_number is found, false otheriwise.
         """
         for row in self.accounts:
-            if (phone_number == row["phone_number"]):
+            if phone_number == row["phone_number"]:
                 return True
         return False

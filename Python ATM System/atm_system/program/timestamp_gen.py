@@ -6,7 +6,7 @@ from datetime import datetime
 
 def timestamp_gen():
     """
-    Returns a timestamp
+    Returns a timestamp.
     """
     now = datetime.now()
     timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
