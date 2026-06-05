@@ -7,9 +7,9 @@ from .account import Account
 
 class TransactType(Enum):
     """
-    This is an Enum class
+    This is an Enum class.
 
-    Enum - is a special data type used to define a set of named constants
+    Enum - is a special data type used to define a set of named constants.
     """
     WITHDRAW = 1
     DEPOSIT = 2
@@ -24,9 +24,9 @@ class AccountTransact(Account):
     Inherits from Account.
 
     Attributes:
-        transact_type (TransactType): Store transaction type
-        amount (float): Store Transaction amount
-        balance (float): Store User's current account balance
+        transact_type (TransactType): Store transaction type.
+        amount (float): Store Transaction amount.
+        balance (float): Store User's current account balance.
     """
 
     def __init__(self, phone_num, acc_num, trans_type, amount, balance):
@@ -37,3 +37,11 @@ class AccountTransact(Account):
         self.transact_type = trans_type
         self.amount = amount
         self.balance = balance
+
+    def to_dict(self):
+        """
+        Returns the modified dictionary form of this object.
+        """
+        new_dict = self.__dict__
+        new_dict.pop("account_number")
+        return new_dict
