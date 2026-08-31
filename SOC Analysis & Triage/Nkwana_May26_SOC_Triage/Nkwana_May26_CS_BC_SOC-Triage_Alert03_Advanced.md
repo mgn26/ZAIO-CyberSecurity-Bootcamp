@@ -212,15 +212,11 @@ Multi-stage intrusion initiated via a drive-by download of a trojanized installe
 
 <!-- Annotated, captioned screenshots referenced from the body. -->
 
-![alert031](evidence/alert03_1.png)
-*Figure 1: Process Create: C:\Users\adriana.garcia\Downloads*
-
-![alert032](evidence/alert03_2.png)
+![alert03](evidence/alert03_1.png)
+*Figure 1: Process Create: C:\Users\adriana.garcia\Downloads\*
+![alert03](evidence/alert03_2.png)
 *Figure 2: Process access: Zoom_v_2.00.4.exe -> MSBuild.exe*
-
-![alert033](evidence/alert03_3.png)
+![alert03](evidence/alert03_3.png)
 *Figure 3: ET EXPLOIT Atlassian Confluence OGNL Injection CVE*
-
-![alert034](evidence/alert03_4.png)
+![alert03](evidence/alert03_4.png)
 *Figure 4: File created: C:\Users\adriana.garcia\AppData\Loca*
-

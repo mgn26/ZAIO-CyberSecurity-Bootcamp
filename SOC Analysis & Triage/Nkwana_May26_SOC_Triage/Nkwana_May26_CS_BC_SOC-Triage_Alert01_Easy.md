@@ -205,12 +205,9 @@ Classic low-and-slow password spray (T1110.003) that successfully scored a valid
 
 ![alert011](evidence/alert01_1.png)
 *Figure 1: VPN AUTH FAILED user=a.petrov src=185.159.0.47 rea*
-
 ![alert012](evidence/alert01_2.png)
 *Figure 2: VPN AUTH SUCCESS user=d.volkov src=185.159.0.47 se*
-
 ![alert013](evidence/alert01_3.png)
 *Figure 3: VPN AUTH FAILED user=a.petrov src=185.159.0.47 rea*
-
 ![alert014](evidence/alert01_4.png)
 *Figure 4: VPN SESSION ESTABLISHED user=d.volkov src=185.159.*

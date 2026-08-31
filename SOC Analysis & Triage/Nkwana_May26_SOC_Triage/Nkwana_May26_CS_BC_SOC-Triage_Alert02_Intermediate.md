@@ -199,17 +199,13 @@ Unauthenticated privilege-escalation exploit chain (CVE-2023-20198/CVE-2023-2027
 
 <!-- Annotated, captioned screenshots referenced from the body. -->
 
-![alert021](evidence/alert02_1.png)
+![alert01](evidence/alert02_1.png)
 *Figure 1: %AAA-5-USER_CREATED: User profile for 'cisco_admin*
-
-![alert022](evidence/alert02_2.png)
+![alert02](evidence/alert02_2.png)
 *Figure 2: %WEBUI-5-HTTP_ACCESS: HTTP request received - [cli*
-
-![alert023](evidence/alert02_3.png)
+![alert03](evidence/alert02_3.png)
 *Figure 3: %WEBUI-5-HTTP_ACCESS: HTTP request received - [cli*
-
-![alert024](evidence/alert02_4.png)
+![alert04](evidence/alert02_4.png)
 *Figure 4: 185.123.0.91:49920 → 203.0.199.14:443 (Allow-Inbound-HTTPS-Any)*
-
-![alert025](evidence/alert02_5.png)
+![alert04](evidence/alert02_5.png)
 *Figure 5: 185.123.0.91:50112 → 203.0.199.14:443 (Allow-Inbound-HTTPS-Any)*
